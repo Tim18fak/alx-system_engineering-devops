@@ -1,10 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# displays the PID, along with the process name, of
+# processes whose name contain the word bash
 
-# Use the /proc filesystem to find processes with "bash" in their name
-for pid in /proc/*/; do
-  pid=${pid%*/}
-  name=$(tr '\0' ' ' < "$pid/cmdline")
-  if [[ $name == *"bash"* ]]; then
-    echo "${pid##*/} $name"
-  fi
-done
+pgrep bash -l
