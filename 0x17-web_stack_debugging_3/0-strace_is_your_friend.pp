@@ -1,5 +1,4 @@
-# fixes corrupted file with extension php
-# # Substitutes `.phpp` with `.php` in the file `wp-settings.php`.
+# Substitutes `.phpp` with `.php` in the file `wp-settings.php`.
 
 exec { 'replace-phpp':
   command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
